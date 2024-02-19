@@ -1,0 +1,15 @@
+﻿@model Hospital
+
+<h1>Detalles Hospital EF</h1>
+<a asp-controller="Hospitales" asp-action="Index"
+   class="btn btn-primary my-3 w-100">
+    Volver al Index
+</a>
+
+<ul class="list-group">
+    <li class="list-group-item">Código: @Model.HospitalCod</li>
+    <li class="list-group-item">Nombre: @Model.Nombre</li>
+    <li class="list-group-item">Dirección: @Model.Direccion</li>
+    <li class="list-group-item">Teléfono: @Model.Telefono</li>
+    <li class="list-group-item">Num Camas: @Model.NumCamas</li>
+</ul>

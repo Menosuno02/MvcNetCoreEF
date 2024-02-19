@@ -1,25 +1,44 @@
 ﻿@model List<Hospital>
 
 <h1>Hospitales Entity Framework</h1>
+
+<a asp-controller="Hospitales" asp-action="Create"
+   class="btn btn-success w-100 my-3">
+    Crear hospital
+</a>
+
 <table class="table table-borderless">
     <thead>
         <tr>
-            <th>Hospital Cod</th>
             <th>Nombre</th>
             <th>Dirección</th>
             <th>Teléfono</th>
-            <th>Num Camas</th>
+            <th>
+
+            </th>
         </tr>
     </thead>
     <tbody>
         @foreach (Hospital hospital in Model)
         {
             <tr>
-                <td>@hospital.HospitalCod</td>
                 <td>@hospital.Nombre</td>
                 <td>@hospital.Direccion</td>
                 <td>@hospital.Telefono</td>
-                <td>@hospital.NumCamas</td>
+                <td>
+                    <a asp-controller="Hospitales" asp-action="Details"
+                       asp-route-id="@hospital.HospitalCod" class="btn btn-primary btn-sm">
+                        Details
+                    </a>
+                    <a asp-controller="Hospitales" asp-action="Update"
+                       asp-route-id="@hospital.HospitalCod" class="btn btn-warning btn-sm">
+                        Update
+                    </a>
+                    <a asp-controller="Hospitales" asp-action="Delete"
+                       asp-route-id="@hospital.HospitalCod" class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
             </tr>
         }
     </tbody>
